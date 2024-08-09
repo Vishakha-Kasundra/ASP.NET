@@ -1,0 +1,29 @@
+﻿@model List<DataBase.Models.Student>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <td>Id</td>
+        <td>Name</td>
+        <td>City</td>
+        <td>Edit</td>
+        <td>Delete</td>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.Name</td>
+            <td>@item.City</td>
+            <td><button class="btn-success">@Html.ActionLink("Edit", "Registration", new { id = @item.Id })</button></td>
+
+            <td><button class="btn-success">@Html.ActionLink("Delete", "Delete", new { id = @item.Id })</button></td>
+        </tr>
+    }
+</table>

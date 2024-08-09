@@ -1,0 +1,16 @@
+﻿@model DataBase.Models.Student
+
+@{
+    ViewBag.Title = "Registration";
+}
+
+<h2>Registration</h2>
+
+@using (Html.BeginForm("Registration", "Home", FormMethod.Post))
+{@Html.Label("Name")
+@Html.TextBoxFor(m => m.Name)<br /><br />
+@Html.Label("City")
+@Html.TextBoxFor(m => m.City)<br /><br />
+<button name="Submit" value="Submit" type="submit"> Submit </button>
+
+}
