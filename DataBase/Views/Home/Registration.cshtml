@@ -1,16 +1,16 @@
-﻿@model DataBase.Models.Student
-
+﻿@model Database.Models.Student
 @{
     ViewBag.Title = "Registration";
 }
 
-<h2>Registration</h2>
+<h2>Registration Form</h2>
 
 @using (Html.BeginForm("Registration", "Home", FormMethod.Post))
-{@Html.Label("Name")
-@Html.TextBoxFor(m => m.Name)<br /><br />
-@Html.Label("City")
-@Html.TextBoxFor(m => m.City)<br /><br />
-<button name="Submit" value="Submit" type="submit"> Submit </button>
-
+{
+    @Html.Label("Name")
+    @Html.TextBoxFor(m => m.Name, new { @class = "Form-control" })<br /><br />
+    @Html.Label("City")
+    @Html.TextBoxFor(m => m.City, new { @class = "Form-control" })<br /><br />
+    <button type="submit" value="submit" class="btn btn-primary">Submit</button>
 }
+

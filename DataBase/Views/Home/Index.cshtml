@@ -1,29 +1,73 @@
-﻿@model List<DataBase.Models.Student>
-
+﻿@model List<Database.Models.Student>
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Home Page";
 }
 
-<h2>Index</h2>
+<!-- Search Form -->
+@using (Html.BeginForm("Index", "Home", FormMethod.Get))
+{
+    <div class="form-group">
+        <div class="form-check">
+            @Html.RadioButton("searchBy", "Name", Request.QueryString["searchBy"] == "Name", new { @class = "form-check-input" })
+            @Html.Label("searchByName", "Search by Name", new { @class = "form-check-label" })
+        </div>
+        <div class="form-check">
+            @Html.RadioButton("searchBy", "City", Request.QueryString["searchBy"] == "City", new { @class = "form-check-input" })
+            @Html.Label("searchByCity", "Search by City", new { @class = "form-check-label" })
+        </div>
+        <br />
+        @Html.TextBox("searchTerm", Request.QueryString["searchTerm"], new { @class = "form-control", placeholder = "Enter search term" })
+        <button type="submit" class="btn btn-primary">Search</button>
+    </div>
+}
 
-<table class="table table-bordered">
-    <tr>
-        <td>Id</td>
-        <td>Name</td>
-        <td>City</td>
-        <td>Edit</td>
-        <td>Delete</td>
-    </tr>
+<br />
 
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>@item.Id</td>
-            <td>@item.Name</td>
-            <td>@item.City</td>
-            <td><button class="btn-success">@Html.ActionLink("Edit", "Registration", new { id = @item.Id })</button></td>
+<h3>Details</h3>
 
-            <td><button class="btn-success">@Html.ActionLink("Delete", "Delete", new { id = @item.Id })</button></td>
-        </tr>
-    }
-</table>
+@using (Html.BeginForm("DeleteSelected", "Home", FormMethod.Post))
+{
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>City</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model.Any())
+            {
+                foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.Id</td>
+                        <td>@item.Name</td>
+                        <td>@item.City</td>
+                        <td>
+                            @Html.ActionLink("Edit", "Registration", new { id = item.Id }, new { @class = "btn btn-outline-secondary" })
+                        </td>
+                        <td>
+                            <input type="checkbox" name="selectedIds" value="@item.Id" />
+                        </td>
+                    </tr>
+                }
+            }
+            else
+            {
+                <tr>
+                    <td colspan="5" class="text-center">No results found</td>
+                </tr>
+            }
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="5">
+                    <button type="submit" class="btn btn-danger">Delete Selected</button>
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+}
