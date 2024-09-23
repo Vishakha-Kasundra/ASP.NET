@@ -1,0 +1,52 @@
+﻿
+
+@model Database.Models.Student
+
+@{
+    ViewBag.Title = "Login Page";
+}
+
+<h2>Login Page</h2>
+
+@if (!string.IsNullOrEmpty(ViewBag.ErrorMessage))
+{
+    <div class="alert alert-danger">@ViewBag.ErrorMessage</div> <!-- Display the error message -->
+}
+
+@using (Html.BeginForm("LoginPage", "Home", FormMethod.Post))
+{
+    <div>
+        @Html.Label("UserName")
+        @Html.TextBoxFor(m => m.UserName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.UserName, "", new { @class = "text-danger" }) <!-- Displays validation error -->
+    </div>
+
+    <div>
+        @Html.Label("Password")
+        @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" }) <!-- Optional: add validation here -->
+    </div>
+
+    <div>
+        @Html.Label("First Name")
+        @Html.TextBoxFor(m => m.Fname, new { @class = "form-control" })
+    </div>
+
+    <div>
+        @Html.Label("Last Name")
+        @Html.TextBoxFor(m => m.Lname, new { @class = "form-control" })
+    </div>
+
+    <div>
+        @Html.Label("City")
+        @Html.TextBoxFor(m => m.City, new { @class = "form-control" })
+    </div>
+
+    <div>
+        @Html.Label("Gender")
+        @Html.RadioButtonFor(m => m.Gender, "Male") Male
+        @Html.RadioButtonFor(m => m.Gender, "Female") Female
+    </div>
+
+    <input type="submit" value="Submit" class="btn btn-primary" />
+}
