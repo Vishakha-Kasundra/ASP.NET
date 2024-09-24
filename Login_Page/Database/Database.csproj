@@ -227,6 +227,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\LoginPage.cshtml" />
     <Content Include="Views\Home\Table.cshtml" />
+    <Content Include="Views\Home\Registration.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

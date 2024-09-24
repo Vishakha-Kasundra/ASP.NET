@@ -28,63 +28,35 @@ namespace Database.Controllers
             return View();
         }
 
-        // GET: LoginPage
-        public ActionResult LoginPage(int? id)
+        // GET: Login
+        public ActionResult Login()
         {
-            Student student = new Student();
-
-            if (id.HasValue && id.Value != 0)
-            {
-                using (MyDbEntities db = new MyDbEntities())
-                {
-                    student = db.Students.Find(id) ?? new Student();
-                }
-            }
-
-            // Pass any error message to the view
-            ViewBag.ErrorMessage = TempData["ErrorMessage"] as string;
-
-            return View(student);
+            return View();
         }
 
-        // POST: LoginPage
+        // POST: Login
         [HttpPost]
-        public ActionResult LoginPage(Student s)
+        public ActionResult Login(Student student)
         {
             using (MyDbEntities db = new MyDbEntities())
             {
-                var usernameExists = db.Students.Any(x => x.UserName == s.UserName && x.Id != s.Id);
+                var user = db.Students.SingleOrDefault(x => x.UserName == student.UserName && x.Password == student.Password);
 
-                if (usernameExists)
+                if (user != null)
                 {
-                    TempData["ErrorMessage"] = "This username already exists. Please enter a different username.";
-                    return RedirectToAction("LoginPage", new { id = s.Id });
-                }
-
-                if (s.Id != 0)
-                {
-                    // Edit existing student
-                    Student ss = db.Students.Find(s.Id);
-                    if (ss != null)
-                    {
-                        ss.UserName = s.UserName;
-                        ss.Password = s.Password;
-                        ss.Fname = s.Fname;
-                        ss.Lname = s.Lname;
-                        ss.City = s.City;
-                        ss.Gender = s.Gender;
-                    }
+                    // Authentication successful (you can set session variables or cookies here)
+                    return RedirectToAction("Table"); // Redirect to the Table view after successful login
                 }
                 else
                 {
-                    // Add new student
-                    db.Students.Add(s);
+                    // Authentication failed
+                    ViewBag.ErrorMessage = "Invalid username or password.";
+                    return View();
                 }
-
-                db.SaveChanges();
             }
-            return RedirectToAction("Table");
         }
+
+
 
         // Action for Table view
         public ActionResult Table()
@@ -131,6 +103,63 @@ namespace Database.Controllers
                 }
             }
             return RedirectToAction("Table"); // Redirect to Table view after deletion
+        }
+
+        public ActionResult Registration(int? id)
+        {
+            Student student = new Student();
+
+            if (id.HasValue && id.Value != 0)
+            {
+                using (MyDbEntities db = new MyDbEntities())
+                {
+                    student = db.Students.Find(id) ?? new Student();
+                }
+            }
+
+            // Pass any error message to the view
+            ViewBag.ErrorMessage = TempData["ErrorMessage"] as string;
+
+            return View(student);
+        }
+
+        [HttpPost]
+        public ActionResult Registration(Student s)
+        {
+            using (MyDbEntities db = new MyDbEntities())
+            {
+                var usernameExists = db.Students.Any(x => x.UserName == s.UserName && x.Id != s.Id);
+
+                if (usernameExists)
+                {
+                    TempData["ErrorMessage"] = "This username already exists. Please enter a different username.";
+                    return RedirectToAction("LoginPage", new { id = s.Id });
+                }
+
+                if (s.Id != 0)
+                {
+                    // Edit existing student
+                    Student ss = db.Students.Find(s.Id);
+                    if (ss != null)
+                    {
+                        ss.UserName = s.UserName;
+                        ss.Password = s.Password;
+                        ss.Fname = s.Fname;
+                        ss.Lname = s.Lname;
+                        ss.City = s.City;
+                        ss.Gender = s.Gender;
+                    }
+                }
+                else
+                {
+                    // Add new student
+                    db.Students.Add(s);
+                }
+
+                db.SaveChanges();
+            }
+            return RedirectToAction("Table");
+            
         }
     }
 }

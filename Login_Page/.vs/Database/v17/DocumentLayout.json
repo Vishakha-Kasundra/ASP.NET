@@ -3,24 +3,12 @@
   "WorkspaceRootPath": "E:\\Sem 3\\ASP.net\\Database\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B034FB7F-266D-4E06-9EE7-F915B44759F8}|Database\\Database.csproj|e:\\sem 3\\asp.net\\database\\database\\views\\home\\table.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B034FB7F-266D-4E06-9EE7-F915B44759F8}|Database\\Database.csproj|solutionrelative:database\\views\\home\\table.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{B034FB7F-266D-4E06-9EE7-F915B44759F8}|Database\\Database.csproj|E:\\Sem 3\\ASP.net\\Database\\database\\views\\home\\loginpage.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{B034FB7F-266D-4E06-9EE7-F915B44759F8}|Database\\Database.csproj|solutionrelative:database\\views\\home\\loginpage.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B034FB7F-266D-4E06-9EE7-F915B44759F8}|Database\\Database.csproj|E:\\Sem 3\\ASP.net\\Database\\database\\models\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B034FB7F-266D-4E06-9EE7-F915B44759F8}|Database\\Database.csproj|solutionrelative:database\\models\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{B034FB7F-266D-4E06-9EE7-F915B44759F8}|Database\\Database.csproj|E:\\Sem 3\\ASP.net\\Database\\database\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B034FB7F-266D-4E06-9EE7-F915B44759F8}|Database\\Database.csproj|solutionrelative:database\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B034FB7F-266D-4E06-9EE7-F915B44759F8}|Database\\Database.csproj|E:\\Sem 3\\ASP.net\\Database\\database\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B034FB7F-266D-4E06-9EE7-F915B44759F8}|Database\\Database.csproj|solutionrelative:database\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,69 +18,30 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "E:\\Sem 3\\ASP.net\\Database\\Database\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "Database\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "E:\\Sem 3\\ASP.net\\Database\\Database\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "Database\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAAA4AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-23T23:21:39.465Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Table.cshtml",
-              "DocumentMoniker": "E:\\Sem 3\\ASP.net\\Database\\Database\\Views\\Home\\Table.cshtml",
-              "RelativeDocumentMoniker": "Database\\Views\\Home\\Table.cshtml",
-              "ToolTip": "E:\\Sem 3\\ASP.net\\Database\\Database\\Views\\Home\\Table.cshtml",
-              "RelativeToolTip": "Database\\Views\\Home\\Table.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAADwAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-23T22:16:45.125Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Student.cs",
-              "DocumentMoniker": "E:\\Sem 3\\ASP.net\\Database\\Database\\Models\\Student.cs",
-              "RelativeDocumentMoniker": "Database\\Models\\Student.cs",
-              "ToolTip": "E:\\Sem 3\\ASP.net\\Database\\Database\\Models\\Student.cs",
-              "RelativeToolTip": "Database\\Models\\Student.cs",
-              "ViewState": "AQIAAA4AAAAAAAAAAAA6wBYAAAAWAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-23T21:55:43.315Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
               "Title": "LoginPage.cshtml",
               "DocumentMoniker": "E:\\Sem 3\\ASP.net\\Database\\Database\\Views\\Home\\LoginPage.cshtml",
               "RelativeDocumentMoniker": "Database\\Views\\Home\\LoginPage.cshtml",
               "ToolTip": "E:\\Sem 3\\ASP.net\\Database\\Database\\Views\\Home\\LoginPage.cshtml",
               "RelativeToolTip": "Database\\Views\\Home\\LoginPage.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAA/AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-09-23T21:46:03.538Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "HomeController.cs",
               "DocumentMoniker": "E:\\Sem 3\\ASP.net\\Database\\Database\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "Database\\Controllers\\HomeController.cs",
               "ToolTip": "E:\\Sem 3\\ASP.net\\Database\\Database\\Controllers\\HomeController.cs",
               "RelativeToolTip": "Database\\Controllers\\HomeController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "ViewState": "AQIAABgAAAAAAAAAAAA0wB8AAAAHAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-23T21:45:33.436Z",
               "EditorCaption": ""
